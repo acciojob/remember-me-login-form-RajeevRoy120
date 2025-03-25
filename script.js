@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (savedUsername && savedPassword) {
         existingUserBtn.style.display = "block"; // Show the existing user button
-    } else {
-        existingUserBtn.style.display = "none"; // Hide if no credentials are stored
     }
 
     // Form submission event
@@ -34,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.removeItem("password");
         }
 
+        // Show or hide the existing user button
         existingUserBtn.style.display = localStorage.getItem("username") ? "block" : "none";
     });
 
